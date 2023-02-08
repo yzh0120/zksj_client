@@ -1,0 +1,105 @@
+/*  
+    elementui主题， 如何动态设置scss变量的值？
+	https://www.h5w3.com/104106.html
+	
+	导航栏 */
+$menuBg: #001529; //菜单背景色
+$submenuBg: #000c17;//二级菜单的背景颜色
+
+$textcolor: hsla(0,0%,100%,.65); //默认字体颜色
+$activeTextColor: #ffffff;//菜单选中的字体颜色
+
+$hoverColor: #409eff;//鼠标移上去的字体颜色
+$activeBgColor: #409eff;//菜单选中的背景颜色
+
+$bg-topBar:#fff;
+$bg-topBarColor:#606266;
+
+//侧边栏样式
+/**************************************************************************/ 
+.two_aside-div {
+	background-color: $menuBg !important; //侧边栏背景色
+}
+/**************************************************************************/ 
+//样式权重最低的子叶菜单样式  会被非一级的某行菜单栏(.el-submenu .el-menu-item)的样式覆盖
+.el-menu-item {
+	background-color: $menuBg !important; //背景颜色
+	color: $textcolor; // 默认字体颜色
+
+	&:hover {
+		color: $hoverColor !important; //字体颜色
+		i {
+			color: $hoverColor !important; //字体颜色
+		}
+	}
+}
+//样式权重最低的母目录样式
+.el-submenu__title {
+	background-color: $menuBg !important; //背景颜色
+	color: $textcolor; // 默认字体颜色
+
+	&:hover {
+		color: $hoverColor !important; //字体颜色
+		i {
+			color: $hoverColor !important; //字体颜色
+		}
+	}
+}
+//非一级的子叶菜单栏样式
+.el-submenu .el-menu-item {
+	
+	background-color: $submenuBg !important; //背景色
+
+	&:hover {
+		color: $hoverColor !important; //字体颜色
+		i {
+			color: $hoverColor !important; //字体颜色
+		}
+	}
+}
+	// 某行激活的子叶菜单栏样式            多选择器是为了权重
+.el-menu li.is-active.el-menu-item {
+
+	color: $activeTextColor !important; // 字体激活颜色
+	background-color: $activeBgColor !important; // 背景激活颜色
+	&:hover {
+		i {
+			color: $activeTextColor !important; //字体颜色
+		}
+	}
+}
+//当点击了子叶菜单时的母展开菜单样式
+.is-active > .el-submenu__title {
+	color: $activeTextColor !important; //的文本颜色
+	i {
+		color: $activeTextColor !important;
+	}
+}
+/**
+tagsView
+************************************************************************/ 
+.three_tags-div-scrollbar{
+	background-color: $bg-topBar;
+	&-ul{
+		&-li{
+			&::before{
+				background: $activeBgColor;
+			}
+		}
+	}
+}
+/**
+header_navbar
+************************************************************************/ 
+.header_navbar{
+	background-color:$bg-topBar;
+	.navbar-collapse{
+		color:$bg-topBarColor;
+	}
+}
+
+.layout-navbars-user {
+	&-icon{
+		color: $bg-topBarColor;
+	}
+}
