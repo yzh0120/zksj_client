@@ -109,6 +109,23 @@ Vue.component("oneFile", oneFile)
 
 import '@/styles/index.scss';
 
+//全局过滤器
+Vue.filter("formatDate", (value, format) => {
+  if (value != "0001-01-01 00:00:00" && value != "0001-01-01T00:00:00" && value) {
+    return fn.formatDate(value, format) 
+  } else {
+    return "";
+  }
+})
+
+Vue.filter("formatMoney", (value, num) => {
+  if (value != "undefined" && value != undefined && value != null) {
+    return fn.formatMoney(value,  num || 2) 
+  } else {
+    return "";
+  }
+})
+
 new Vue({
   router,
   store,
