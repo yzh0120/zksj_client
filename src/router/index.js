@@ -32,9 +32,20 @@ const data = {
   client_secret: "gxbl2018",
 }
 
+function fnStatic() {
+  if (process.env.ENV === 'test') {
+    return "/receive-platform-jsyh/"
+  } else if (process.env.ENV === 'production') {
+    return "/receive-platform-saas/"
+  } else {
+    return "/"
+  }
+}
+
 const router = new VueRouter({
   mode: 'hash',
-  base: process.env.BASE_URL,
+  base: fnStatic(),
+  // base: process.env.BASE_URL,
   routes
 })
 

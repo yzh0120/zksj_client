@@ -13,8 +13,20 @@ function resolve(dir) {
 
 const name = "金融服务平台"
 
+function fnStatic() {
+  if (process.env.ENV === 'test') {
+    return "/receive-platform-jsyh/"
+  } else if (process.env.ENV === 'production') {
+    return "/receive-platform-saas/"
+  } else {
+    return "/"
+  }
+}
+
 module.exports = {
-  publicPath: process.env.ENV === 'test' ? '/oawebuat/' : '/',
+  transpileDependencies: ["*"] ,
+  publicPath: fnStatic(),
+  // publicPath: process.env.ENV === 'test' ? '/oawebuat/' : '/',
   productionSourceMap: false,
   configureWebpack: {
     name: name,
