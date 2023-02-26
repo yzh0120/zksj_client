@@ -1,23 +1,28 @@
+<!--
+ * @Author: yz
+ * @Date: 2022-11-16 17:24:19
+ * @Description: 
+ * 
+-->
 <template>
-  <maincontent></maincontent>
+
+  <el-container class="hm-container">
+    <!-- 头部 -->
+    <topheader></topheader>
+    <!-- 主体 -->
+    <maincontent></maincontent>
+  </el-container>
+
 </template>
 
 <script>
+import topheader from "@/layout/components/header/index.vue";
 import maincontent from "@/layout/components/main/index";
 export default {
   name: "layout",
   components: {
+    topheader,
     maincontent,
-  },
-  computed: {
-    //写死的布局数据
-    // isCollapse() {
-    //   if (this.$store.state.config.isCollapse) {
-    //     return { width: `calc(100% - 54px)` }
-    //   } else {
-    //     return { width: "calc(100% - 210px)" }
-    //   }
-    // },
   },
   // 监听路由的变化
   $route: {
@@ -31,30 +36,14 @@ export default {
 
 
 <style lang="scss" scoped>
-.one_index-container-aside-head-main {
-  display: flex !important;
-}
-
-.one_index-container-head-main {
+.hm-container {
   flex-direction: column;
-  // width: 100%;
-  height: 100%;
-  display: flex;
 }
 
 .layout-scrollbar {
+  // min-height: calc(100vh - 84px);
   transition: padding 0.3s ease-in-out 0s;
   width: 100%;
   // padding: 15px;
-}
-
-//写死的布局数据
-.isCollapse {
-  width: calc(100% - 54px)
-}
-
-//写死的布局数据
-.noisCollapse {
-  width: calc(100% - 210px)
 }
 </style>

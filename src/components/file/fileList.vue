@@ -13,13 +13,16 @@
             <td width="13%" v-if="showUploadBtn">操作</td>
           </tr>
           <tr v-for="(item, index) in fileList" :key="index">
+            <!-- 资料名称 -->
             <td>
               {{ item.name }}
               <span style="color: red" v-if="item.require">*</span>
             </td>
+            <!-- 详情 -->
             <td>
               <file-list-show :arr="item.detail" :del="candelete" />
             </td>
+            <!-- 操作 -->
             <td class="text-center">
               <oneFile :projectId="projectId" :uploadObj="item"></oneFile>
             </td>

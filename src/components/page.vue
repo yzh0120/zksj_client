@@ -1,9 +1,3 @@
-<!--
- * @Author: yz
- * @Date: 2023-02-08 15:51:32
- * @Description: 
- * 
--->
 <template>
   <div style="" class="ddd">
     <slot></slot>
@@ -21,6 +15,5 @@ export default {
   // box-sizing: border-box;
   padding: 20px;
   background-color: #fff;
-  min-height: 100vh
 }
 </style>

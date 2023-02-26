@@ -5,26 +5,14 @@
  * 
  */
 const state = {
-  isCollapse: false,//折叠
-  loading: false,
-  dataItem: {},//数据字段
-  isMobile:false,//手机环境
+  isCollapse: false,
+  loading: false
 }
 
 const mutations = {
   setCollapse(state, val) {
     state.isCollapse = val;
-  },
-  windowResize(state, params) { //是一个函数
-    let {
-      innerWidth,
-      innerHeight
-    } = window
-    state.window_innerWidth = innerWidth
-    state.window_innerHeight = innerHeight
-
-    state.isMobile = state.window_innerWidth < 768 ? true : false;
-  },
+  }
 }
 
 const actions = {

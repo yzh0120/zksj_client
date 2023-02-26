@@ -5,10 +5,7 @@
  * @FilePath: \oaweb\README.md
  * 
 -->
-# 业务系统web开发说明 
-# 50px 是logo组件的大小
-# 84px  是header的高度
-# calc(100% - 210px) 展开的侧边栏   calc(100% - 54px) 缩起的侧边栏
+# 业务系统web开发说明
 
 ### 1、项目介绍
 该项目是一个基于 [vue2](https://cn.vuejs.org) + [elementui](https://element.eleme.cn/) + [vxe-table](https://vxetable.cn/) 开发的前后端分离的项目

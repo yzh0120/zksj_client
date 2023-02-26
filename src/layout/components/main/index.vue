@@ -1,36 +1,48 @@
 <!--
  * @Author: yz
- * @Date: 2023-02-08 15:51:32
+ * @Date: 2022-11-16 17:24:19
  * @Description: 
  * 
 -->
 <template>
-  <el-main class="two_main-main-scrollbar">
-    <!-- <el-scrollbar class="layout-scrollbar" ref="layoutScrollbarRef" :style="style"> -->
-    <el-scrollbar class="layout-scrollbar" ref="layoutScrollbarRef">
+  <el-main class="layout-main">
+    <el-scrollbar class="layout-scrollbar" ref="layoutScrollbarRef" :style="style">
       <div ref="keepAliveContainer" class="app_main" id="app_main">
         <transition name="fade-transform" mode="out-in">
-          <!-- <keep-alive>
-            <router-view :key="key" />
-          </keep-alive> -->
+          <!-- <keep-alive > -->
           <router-view :key="key" />
-          <!-- <router-view v-else></router-view> -->
+          <!-- </keep-alive> -->
+          <!-- <router-view></router-view> -->
         </transition>
       </div>
     </el-scrollbar>
   </el-main>
+
 </template>
 
 <script>
 import * as config from "@/config/index";
 export default {
   name: "maincontent",
+  watch: {
+    $route: {
+      //保存上一次的路由,之所以放在这里 是保证已经进了路由了
+      handler(newVal, oldVal) {
+        if (this.$refs.layoutScrollbarRef) {
+          this.$refs.layoutScrollbarRef.wrap.scrollTop = 0;  //这句重置滚动条高度
+        }
+      },
+      immediate: true,
+    },
+  },
   data() {
     return {
-      //写死的布局数据 //84px  是header的高度
-      // style: {
-      //   "min-height": "calc(100vh - 84px)"
-      // },
+      needTags: config.needTags,
+      style: {
+        "min-height": config.needTags
+          ? "calc(100vh - 84px)"
+          : "calc(100vh - 50px)",
+      },
     };
   },
   mounted() {
@@ -55,8 +67,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.one_index-container-aside-head-main .layout-scrollbar {
-  // padding: 15px;
+.layout-container .layout-scrollbar {
+  padding: 15px;
   transition: padding 0.3s ease-in-out 0s;
 }
 </style>

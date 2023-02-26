@@ -1,14 +1,14 @@
+export const needTags = true;
 const screenHeight = Number(clientHeight());
-// let app_main = document.getElementById("app_main")
 
-// console.log(app_main.height, "app_main")
 
-//vxetable高度
-export const tableheight = screenHeight - 280 + "px"
-//vxetable高度
-export const navTableHeight = screenHeight - 140 + "px"
+export const tableheight = needTags ? screenHeight - 280 + "px" : screenHeight - 227 + "px";
 
-export const navTableIntableHeight = (screenHeight - 140) - 180 + "px"
+// export const nopagetableheight = needTags ? screenHeight - 205 + "px" : screenHeight - 217 + "px";
+
+// export const linkheight = needTags ? screenHeight - 270 + "px" : screenHeight - 250 + "px";
+
+// export const rollheight = needTags ? screenHeight - 114 + "px" : screenHeight - 80 + "px";
 
 function clientHeight() {
   return document.documentElement.clientHeight || document.body.clientHeight || window.innerHeight;

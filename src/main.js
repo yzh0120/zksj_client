@@ -1,4 +1,5 @@
-import '@babel/polyfill';
+
+
 import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
@@ -25,18 +26,18 @@ Vue.prototype.$fileType = ["pdf", "doc", "docx", "xls", "xlsx", "jpg", "jpeg", "
 
 /** 插件 *******************************************************************************************************/
 
-//VueSocketIO
-import VueSocketIO from 'vue-socket.io'
-Vue.use(new VueSocketIO({
-  debug: true, //开启debug模式
-  connection: 'http://localhost:4000', //连接地址
-  options: {
-    autoConnect: false, //是否一进网站就链接socket
-    query: {
-      token: ''
-    },
-  },
-}))
+// //VueSocketIO
+// import VueSocketIO from 'vue-socket.io'
+// Vue.use(new VueSocketIO({
+//   debug: true, //开启debug模式
+//   connection: 'http://localhost:4000', //连接地址
+//   options: {
+//     autoConnect: false, //是否一进网站就链接socket
+//     query: {
+//       token: ''
+//     },
+//   },
+// }))
 
 import {
   getCookie
@@ -91,13 +92,6 @@ Vue.component("pager", basePager)
 import panel from '@/components/panel'
 Vue.component("panel", panel)
 
-import mSteps from '@/components/m-steps'
-import mStep from '@/components/m-step'
-Vue.use(mStep)
-Vue.use(mSteps)
-
-
-
 //文件
 import fileList from '@/components/file/fileList'
 Vue.component("fileList", fileList)
@@ -109,6 +103,8 @@ import oneFile from '@/components/file/oneFile'
 Vue.component("oneFile", oneFile)
 
 import '@/styles/index.scss';
+
+
 
 //全局过滤器
 Vue.filter("formatDate", (value, format) => {

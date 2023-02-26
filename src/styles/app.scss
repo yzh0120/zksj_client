@@ -32,96 +32,78 @@
   padding: 0;
   box-sizing: border-box;
   outline: none;
-  font-family: "微软雅黑";
+  // font-family: "微软雅黑", Avenir, Helvetica, Arial, sans-serif;
+  font-family: Helvetica, Arial, sans-serif;
 }
 
 html,
 body,
 #app,
-.el-container
- {
+.el-container,
+.el-main {
   height: 100% !important;
   padding: 0 !important;
-  margin: 0 !important;
+  // margin: 0 !important;
   box-sizing: border-box;
-  background-color: #f8f8f8;
-  font-size: 14px;
-}
-.el-main{
-  //84px  是header的高度
-  // height: calc(100% - 84px) !important;
-  height:100%;
-  padding: 0 !important;
-  margin: 0 !important;
-  box-sizing: border-box;
-  background-color: #f8f8f8;
+  // background-color: #f8f8f8;
   font-size: 14px;
 }
 
-.one_index-container-aside-head-main {
+ul,
+li {
+  list-style: none;
+}
+
+.center,
+.text-center {
+  text-align: center;
+}
+
+.text-right{
+  text-align: right;
+}
+
+.hm-container{
   width: 100%;
   height: 100%;
-  .two_main-main-scrollbar {
+  .headerstyle {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    height: 70px !important;
+    background-color: white;
+  }
+  .layout-main {
     padding: 0 !important;
     overflow: hidden;
     width: 100%;
-    background-color: #f8f8f8;
+    // background-color: red;
+  
+    // width: 1200px;
+    margin: 0 auto;
   }
   .el-scrollbar {
     width: 100%;
   }
 }
-/**
-自定义类名
-************************************************************************/
-ul,
-li {
-  list-style: none;
-}
-/**
-自定义类名
-************************************************************************/
-.center,
-.text-center {
-  text-align: center;
-}
-/**
-自定义类名
-************************************************************************/
-.text-right{
-  text-align: right;
-}
 
 
-
-/**
-自定义类名
-************************************************************************/
 .flex-grow {
   display: flex;
   flex-direction: row;
   align-items: center;
 }
 
-/**
-自定义类名
-************************************************************************/
 .projectCode {
   text-align: right;
   font-weight: bold;
   font-size: 20px;
 }
 
-/**
-自定义类名
-************************************************************************/
 .pager {
   margin-top: 15px;
 }
 
-/**
-treeselect
-************************************************************************/
 .treeselect {
   .el-form-item__content {
     line-height: 30px !important;
@@ -135,9 +117,7 @@ treeselect
   }
 }
 
-/**
-自定义类名
-************************************************************************/
+
 .fixed {
   width: 40px;
   height: 40px;
@@ -158,40 +138,6 @@ treeselect
   cursor: pointer;
 }
 
-/**
-自定义类名
-************************************************************************/
 .fs12 {
   font-size: 12px;
-}
-/**
-全局滚动条
-************************************************************************/ 
-
-::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
-  background-color: #f5f5f5;
-}
-
-/*定义滚动条轨道 内阴影+圆角*/
-::-webkit-scrollbar-track {
-  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-  border-radius: 10px;
-  background-color: #f5f5f5;
-}
-
-/*定义滑块 内阴影+圆角*/
-::-webkit-scrollbar-thumb {
-  // border-radius: 10px;
-  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
-  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
-  background-color: #c8c8c8;
-}
-
-
-/* 图标不可被选中 */
-i {
-  user-select: none;
 }

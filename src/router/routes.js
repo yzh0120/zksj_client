@@ -11,62 +11,73 @@ let layout = () => import("@/layout/index.vue")
 // import vxeTable from "./modules/2-vxe-table.js"
 // import fastCopy from "./modules/3-fastCopy.js"
 // import fileUp from "./modules/4-fileUp.js"
-// import localCopy from "./modules/5-localCopy.js"
 // import style from "./modules/6-style.js"
 // import svgIcon from "./modules/7-svgIcon.js"
-// import socket from "./modules/8-socket.js"
-// import plug from "./modules/9-plug.js"
-// import vCharts from "./modules/10-vCharts.js"
 // import elementUi from "./modules/11-element-ui.js"
-// import print from "./modules/12-print.js"
 import {
   status
 } from "./modules/status.js"
 
-const routes = [{
+const routes = [
+  // {
+  //   path: 'home',
+  //   name: 'home',
+  //   component: () => import('../views/home/index.vue')
+  // }
+  {
     path: "/",
+    component: layout,
     redirect: "/home",
-    component: layout,
-    meta: {},
     children: [{
-      path: 'home',
-      name: 'home',
-      component: () => import("@/views/home/index.vue"),
-      meta: {
-        title: '首页',
-        icon: 'dashboard',
-        isAffix: true,
-        // hidden: true,
-      }
-    }]
-  },
-  {
-    path: '/blank',
-    name: 'blank',
-    component: layout,
-    meta: {
-      hidden: true,
-    },
-  },
+        path: '',
+        name: 'home',
+        component: () => import("@/views/home/index.vue"),
+      },
+      // {
+      //   path: 'jyt',
+      //   name: 'jyt',
+      //   component: () => import("@/views/jyt.vue"),
+      // },
+      // {
+      //   path: 'xtrj', //三方金融服务平台
+      //   name: 'xtrj',
+      //   component: () => import("@/views/xtrj.vue"),
+      // }, {
+      //   path: 'jdal',
+      //   name: 'jdal',
+      //   component: () => import("@/views/jdal.vue"),
+      //   children: [
 
-  {
-    path: "/login",
-    name: 'login',
-    component: () => import("@/views/login/index.vue")
+      //   ]
+      // }, {
+      //   path: 'hyzx',
+      //   name: 'hyzx',
+      //   component: () => import("@/views/hyzx.vue"),
+      // }, {
+      //   path: 'rczp',
+      //   name: 'rczp',
+      //   component: () => import("@/views/rczp.vue"),
+      // }, {
+      //   path: 'aboutUs',
+      //   name: 'aboutUs',
+      //   component: () => import("@/views/aboutUs.vue"),
+      // }
+      // ///////////////////////
+      // , {
+      //   path: 'dzbhspxt',
+      //   name: 'dzbhspxt', //电子保函审批系统
+      //   component: () => import("@/views/dzbhspxt.vue"),
+      // }, {
+      //   path: 'frzywoaxt',
+      //   name: 'frzywoaxt', //非融资业务OA系统
+      //   component: () => import("@/views/frzywoaxt.vue"),
+      // }, {
+      //   path: 'xwzx/:id?',
+      //   name: 'xwzx', //非融资业务OA系统
+      //   component: () => import("@/views/xwzx.vue"),
+      // }
+    ]
   },
-  // baseForm, //表单
-  // vxeTable,//列表
-  // fastCopy,//复制
-  // style,//css
-  // svgIcon, //图标
-  // fileUp, //文件上传
-  // socket,//socket
-  // plug,//插件
-  // localCopy,//局部复制
-  // vCharts,//图表
-  // elementUi, //
-  // print,//打印
-  ...status, //状态和登录页
 ]
 
 export const otherRoutes = [{

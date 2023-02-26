@@ -7,99 +7,89 @@ $menuBg: #001529; //菜单背景色
 $submenuBg: #000c17;//二级菜单的背景颜色
 
 $textcolor: hsla(0,0%,100%,.65); //默认字体颜色
-$activeTextColor: #ffffff;//菜单选中的字体颜色
+$activeTextColor: rgba(217, 22, 59, 1);//菜单选中的字体颜色
 
 $hoverColor: #409eff;//鼠标移上去的字体颜色
 $activeBgColor: #409eff;//菜单选中的背景颜色
 
-$bg-topBar:#fff;
-$bg-topBarColor:#606266;
 
-//侧边栏样式
-/**************************************************************************/ 
-.two_aside-div {
-	background-color: $menuBg !important; //侧边栏背景色
+// .sidebar-container {
+// 	background-color: $menuBg !important; //侧边栏背景色
+// }
+// .el-menu-item {
+// 	//权重最低的 子叶选项会被非一级的某行菜单栏 样式覆盖
+// 	background-color: $menuBg !important; //背景颜色
+// 	color: $textcolor; // 默认字体颜色
+
+// 	&:hover {
+// 		color: $hoverColor !important; //字体颜色
+// 		i {
+// 			color: $hoverColor !important; //字体颜色
+// 		}
+// 	}
+// }
+// .el-submenu__title {
+// 	//权重最低的 母目录
+// 	background-color: $menuBg !important; //背景颜色
+// 	color: $textcolor; // 默认字体颜色
+
+// 	&:hover {
+// 		color: $hoverColor !important; //字体颜色
+// 		i {
+// 			color: $hoverColor !important; //字体颜色
+// 		}
+// 	}
+// }
+.el-submenu.is-active.is-opend{
+
 }
-/**************************************************************************/ 
-//样式权重最低的子叶菜单样式  会被非一级的某行菜单栏(.el-submenu .el-menu-item)的样式覆盖
-.el-menu-item {
-	background-color: $menuBg !important; //背景颜色
-	color: $textcolor; // 默认字体颜色
-
-	&:hover {
-		color: $hoverColor !important; //字体颜色
-		i {
-			color: $hoverColor !important; //字体颜色
-		}
-	}
+.el-submenu .el-submenu__title{
+	border: 0px solid red !important;
+	font-size: 16px !important;;
+	font-weight: 500 !important;;
+	color: rgba(31, 31, 31, 1)!important;
 }
-//样式权重最低的母目录样式
-.el-submenu__title {
-	background-color: $menuBg !important; //背景颜色
-	color: $textcolor; // 默认字体颜色
-
-	&:hover {
-		color: $hoverColor !important; //字体颜色
-		i {
-			color: $hoverColor !important; //字体颜色
-		}
-	}
+// .el-submenu .el-menu-item , .el-submenu .el-menu-item.is-active {
+// 	width: 150px !important;
+// }
+.el-menu{
+	height: 70px !important;
+	border-bottom: 0px !important;
 }
-//非一级的子叶菜单栏样式
-.el-submenu .el-menu-item {
-	
-	background-color: $submenuBg !important; //背景色
-
-	&:hover {
-		color: $hoverColor !important; //字体颜色
-		i {
-			color: $hoverColor !important; //字体颜色
-		}
-	}
+.el-menu-item,.el-submenu{
+	width: 150px;
+	height: 70px !important;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 16px !important;;
+	font-weight: 500 !important;;
+	color: rgba(31, 31, 31, 1)!important;
 }
-	// 某行激活的子叶菜单栏样式            多选择器是为了权重
-.el-menu li.is-active.el-menu-item {
-
+.el-menu.el-menu--popup  li.is-active.el-menu-item{
+	background-color: $activeTextColor;
+	color: white !important;
+}
+.el-menu li.is-active.el-menu-item,
+.el-menu li.is-active.el-submenu{
+	// 某行激活的菜单栏            多选择器是为了权重
 	color: $activeTextColor !important; // 字体激活颜色
-	background-color: $activeBgColor !important; // 背景激活颜色
-	&:hover {
-		i {
-			color: $activeTextColor !important; //字体颜色
-		}
-	}
-}
-//当点击了子叶菜单时的母展开菜单样式
-.is-active > .el-submenu__title {
-	color: $activeTextColor !important; //的文本颜色
-	i {
-		color: $activeTextColor !important;
-	}
-}
-/**
-tagsView
-************************************************************************/ 
-.three_tags-div-scrollbar{
-	background-color: $bg-topBar;
-	&-ul{
-		&-li{
-			&::before{
-				background: $activeBgColor;
-			}
-		}
-	}
-}
-/**
-header_navbar
-************************************************************************/ 
-.header_navbar{
-	background-color:$bg-topBar;
-	.navbar-collapse{
-		color:$bg-topBarColor;
-	}
+	border-bottom: 2px solid $activeTextColor !important;
+	// background-color: $activeBgColor !important; // 背景激活颜色
+	// &:hover {
+	// 	i {
+	// 		color: $activeTextColor !important; //字体颜色
+	// 	}
+	// }
 }
 
-.layout-navbars-user {
-	&-icon{
-		color: $bg-topBarColor;
-	}
+// .is-active > .el-submenu__title {
+// 	//当点击了子菜单时的父菜单
+// 	color: $activeTextColor !important; //的文本颜色
+// 	i {
+// 		color: $activeTextColor !important;
+// 	}
+// }
+.el-menu--collapse .el-menu .el-submenu, .el-menu--popup {
+	min-width: 10px;
 }
