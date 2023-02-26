@@ -30,7 +30,7 @@ export default {
   name: "noFound",
   data() {
     return {
-      img404: require("@/assets/imgs/404.png"),
+      img404: require("@/assets/home/404.png"),
       state: {
         window_innerWidth: "",
         window_innerHeight: "",

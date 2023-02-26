@@ -29,7 +29,7 @@ export default {
       link.type = "image/x-icon";
       link.rel = "shortcut icon";
 
-      link.href = require("@/assets/imgs/mxh.png");
+      link.href = require("@/assets/home/mxh.png");
       document.getElementsByTagName("head")[0].appendChild(link);
     },
   },

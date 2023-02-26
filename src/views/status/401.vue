@@ -28,7 +28,7 @@ export default {
   name: "noAuth",
   data() {
     return {
-      img401: require("@/assets/imgs/401.png"),
+      img401: require("@/assets/home/401.png"),
       state: {
         window_innerWidth: "",
         window_innerHeight: "",

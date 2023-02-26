@@ -8,7 +8,7 @@
 
   <div class="box">
     <div class="left">
-      <img :src="require(`@/assets/imgHome/logo.png`)" alt="" @click="ccc" class="img_logo" />
+      <img :src="require(`@/assets/home/logo.png`)" alt="" @click="ccc" class="img_logo" />
 
     </div>
 
@@ -149,7 +149,7 @@ export default {
     justify-content: center;
     align-items: center;
     color: rgba(217, 22, 59, 1);
-    background-image: url(../../../assets/imgHome/phone1.png);
+    background-image: url(../../../assets/home/phone1.png);
     background-repeat: no-repeat;
     background-position: left 8px top 10px;
 
@@ -163,7 +163,7 @@ export default {
     &:hover {
       background-color: rgba(217, 22, 59, 1);
       color: #F5F5F5;
-      background-image: url(../../../assets/imgHome/phone2.png);
+      background-image: url(../../../assets/home/phone2.png);
       background-repeat: no-repeat;
       background-position: left 8px top 10px;
       //     .img1{
