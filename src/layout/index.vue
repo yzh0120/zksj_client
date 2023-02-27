@@ -6,12 +6,17 @@
 -->
 <template>
 
-  <el-container class="hm-container">
+  <div>
+    <el-container class="hm-container" v-if="$store.state.config.mode == 1">
     <!-- 头部 -->
     <topheader></topheader>
     <!-- 主体 -->
     <maincontent></maincontent>
   </el-container>
+
+ 
+  <maincontent v-if="$store.state.config.mode == 2"></maincontent>
+  </div>
 
 </template>
 
