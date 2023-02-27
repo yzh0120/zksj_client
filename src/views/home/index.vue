@@ -13,8 +13,11 @@
     </el-carousel>
 
 
-    <foot></foot>
 
+    <steps :active="info.orderstatus" :info="info"></steps>
+
+    <!-- <foot></foot> -->
+123
   </div>
 
 
@@ -23,13 +26,18 @@
 
 <script>
 import foot from "@/layout/components/footer/index";
+import steps from "@/views/steps";
 export default {
   components: {
-    foot
+    foot,
+    steps
   },
   data() {
     
     return {
+      info: {
+        orderstatus:3
+      },
       bannerHeight: 450,
       screenWidth:1920,
       bannerList: [

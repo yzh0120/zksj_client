@@ -102,6 +102,12 @@ Vue.component("fileListShow", fileListShow)
 import oneFile from '@/components/file/oneFile'
 Vue.component("oneFile", oneFile)
 
+
+import mSteps from '@/components/m-steps'
+import mStep from '@/components/m-step'
+Vue.use(mStep)
+Vue.use(mSteps)
+
 import '@/styles/index.scss';
 
 
