@@ -12,11 +12,21 @@ function resolve(dir) {
 }
 
 const defaultSettings = require('./src/config/setting.js')
-const name = defaultSettings.title || '中科数建'
+const name = '中科数建'
+
+function fnStatic() {
+  if (process.env.ENV === 'test') {
+    return "/receive-platform-jsyh/"
+  } else if (process.env.ENV === 'production') {
+    return "/receive-platform-saas/"
+  } else {
+    return "/"
+  }
+}
 
 module.exports = {
   // publicPath: process.env.ENV === 'test' ? '/oawebuat/' : '/',
-  publicPath: '/', //这个必须，引入静态资源需要从根路径引入，否则会找不到静态资源
+  publicPath: fnStatic(), //这个必须，引入静态资源需要从根路径引入，否则会找不到静态资源
   devServer: {
     // history模式下的url会请求到服务器端，但是服务器端并没有这一个资源文件，就会返回404，所以需要配置这一项
     historyApiFallback: {
@@ -44,7 +54,7 @@ module.exports = {
   chainWebpack(config) {
     config.plugin('html')
       .tap(args => {
-        args[0].title = "中科数建";
+        args[0].title = name;
         return args;
       })
     // set svg-sprite-loader
