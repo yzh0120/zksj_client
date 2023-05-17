@@ -102,6 +102,12 @@ Vue.component("fileListShow", fileListShow)
 import oneFile from '@/components/file/oneFile'
 Vue.component("oneFile", oneFile)
 
+import card from '@/components/card'
+Vue.component("card", card)
+
+import tip from '@/components/tip'
+Vue.component("tip", tip)
+
 
 import mSteps from '@/components/m-steps'
 import mStep from '@/components/m-step'

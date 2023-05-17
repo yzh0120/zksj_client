@@ -17,7 +17,19 @@
     <steps :active="info.orderstatus" :info="info"></steps>
 
     <!-- <foot></foot> -->
-123
+    <card header="保函开具成功" shadow="never" noborder>
+      card
+    </card>
+
+    <tip title="注意事项"></tip>
+
+
+    <div class="flex_box">
+        <p class="title_box">收款账户名称</p>
+        <p class="value_box">123</p>
+      </div>
+
+
   </div>
 
 
