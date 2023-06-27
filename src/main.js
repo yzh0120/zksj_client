@@ -108,6 +108,9 @@ Vue.component("card", card)
 import tip from '@/components/tip'
 Vue.component("tip", tip)
 
+import tip2 from '@/components/tip2'
+Vue.component("tip2", tip2)
+
 
 import mSteps from '@/components/m-steps'
 import mStep from '@/components/m-step'

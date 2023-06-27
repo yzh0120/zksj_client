@@ -3,8 +3,11 @@
     <div class="panel" :class="addType">
 			<!-- 头部 -->
       <div :class="[`panel-heading`]" @click="bodyHandle" :style="{fontSize:sizeComputed}">
-			<div  v-if="head">{{head}}</div>
+				<div class="shu">
+					<div  v-if="head">{{head}}</div>
 				<slot name="head"></slot>
+				</div>
+			
       </div>
 			<!-- 身体 -->
       <div class="panel-body" :style="{height:height}">
@@ -191,4 +194,21 @@
 	transition: all .2s;
   }
 }
+
+.shu{
+		padding-left: 10px;
+		position: relative;
+		// width:10px;
+		// height:10px;
+		// background-color: #F6384C;
+		&::before{
+			content: "";
+			display:inline-block;
+			position: absolute;
+					width:4px;
+		height:100%;
+		left: -4px;
+		background-color: #F6384C;
+		}
+	}
 </style>
